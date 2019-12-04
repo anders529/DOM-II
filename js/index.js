@@ -1,4 +1,13 @@
 // GTFO!!
+
+//Prevent Default stuff
+let fan = document.querySelectorAll('nav a');
+fan.forEach((link)=>{
+  link.addEventListener("click", (e) =>{
+      e.preventDefault();
+  })
+})
+
 //change image size.
 const keys = document.querySelector(".intro img")
 keys.addEventListener("mouseenter", (event) => {
@@ -22,6 +31,16 @@ document.querySelectorAll("h2").forEach(el => {
       el.style.color= "purple";
     })
   })
+  bodyBG = document.querySelector("body");
+  bodyBG.addEventListener("click", (e)=>{
+    e.target.style.backgroundColor = "yellow";
+})
+
+headerBG = document.querySelector("header p");
+  headerBG.addEventListener("click", (e) =>{
+    e.target.style.backgroundColor = "blue";
+      e.stopPropagation();
+})
 
   // on keypressed, change text color to green
   const el = document.querySelector("body")
